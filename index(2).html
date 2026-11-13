@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Omnia Fashion</title>
+<style>
+:root{--pink:#e84d91;--dark:#382536;--cream:#fff8fb}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#ffe3ef,#f6eaff);font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--dark)}
+header{text-align:center;padding:20px 12px 12px}h1{margin:0;color:#c52f78;font-size:clamp(28px,7vw,42px);letter-spacing:1px}header p{margin:5px 0;color:#79566c}
+main{max-width:950px;margin:auto;padding:12px}
+.panel{background:#ffffffd9;border:1px solid #fff;border-radius:22px;padding:16px;box-shadow:0 10px 30px #a94c771c}
+.top{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:12px}
+button,select{font:inherit;border:0;border-radius:14px;padding:11px 15px;background:#f9d4e5;color:#70264a;font-weight:700}
+button.primary{background:var(--pink);color:white}button:active{transform:scale(.98)}
+.stage{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.dollcard{background:linear-gradient(#fff6fa,#f5eaff);border-radius:18px;padding:12px;text-align:center;min-width:0}
+.dollcard h2{font-size:18px;margin:4px}
+.doll{height:260px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.figure{position:relative;width:120px;height:235px}
+.hair{position:absolute;top:3px;left:28px;width:64px;height:66px;background:#4a2a27;border-radius:48% 48% 35% 35%;z-index:2}
+.face{position:absolute;top:18px;left:37px;width:47px;height:57px;background:#f2c5a8;border-radius:45% 45% 48% 48%;z-index:3}
+.eye{position:absolute;top:42px;width:5px;height:4px;border-radius:50%;background:#39232b;z-index:4}.eye.a{left:49px}.eye.b{left:68px}
+.neck{position:absolute;top:68px;left:54px;width:17px;height:20px;background:#edb99d;z-index:2}
+.body{position:absolute;top:82px;left:27px;width:67px;height:82px;background:var(--dress,#dc5a94);clip-path:polygon(28% 0,72% 0,100% 100%,0 100%);z-index:3}
+.arm{position:absolute;top:87px;width:15px;height:77px;background:#edb99d;border-radius:12px;z-index:2}.arm.l{left:19px;transform:rotate(12deg)}.arm.r{right:18px;transform:rotate(-12deg)}
+.skirt{position:absolute;top:145px;left:15px;width:91px;height:65px;background:var(--skirt,#f18bb7);clip-path:polygon(25% 0,75% 0,100% 100%,0 100%);z-index:3}
+.leg{position:absolute;top:202px;width:17px;height:32px;background:#edb99d;border-radius:8px;z-index:2}.leg.l{left:43px}.leg.r{left:64px}
+.doll[data-look="blue"]{--dress:#547dbb;--skirt:#8eb5ed}.doll[data-look="gold"]{--dress:#c79b35;--skirt:#f0cf75}.doll[data-look="purple"]{--dress:#8b65b6;--skirt:#c2a1e8}.doll[data-look="red"]{--dress:#b83c5b;--skirt:#ed7891}
+.doll[data-hair="blonde"] .hair{background:#d5a64e}.doll[data-hair="black"] .hair{background:#211b24}.doll[data-hair="brown"] .hair{background:#75452f}
+.controls{display:grid;gap:8px;margin-top:8px;text-align:right}.controls label{font-size:13px;font-weight:700}
+.controls select{width:100%;background:#fff;border:1px solid #f0c8da}
+.score{margin-top:14px;padding:13px;border-radius:16px;background:#fff0f6;text-align:center;display:none}
+footer{text-align:center;font-size:12px;color:#896c7c;padding:16px}
+@media(max-width:520px){.doll{height:225px}.figure{transform:scale(.88)}.panel{padding:11px}.stage{gap:8px}.dollcard{padding:8px}.dollcard h2{font-size:15px}}
+</style>
+</head>
+<body>
+<header><h1>Omnia Fashion</h1><p>تحدّي الأناقة يبدأ هنا ✨</p></header>
+<main>
+<section class="panel">
+ <div class="top"><strong id="theme">موضوع التحدّي: سهرة ملكية 👑</strong><button class="primary" id="newTheme">موضوع جديد</button></div>
+ <div class="stage">
+  <article class="dollcard"><h2>العروسة الأولى</h2><div class="doll" id="doll1" data-look="pink" data-hair="brown"><div class="figure"><div class="hair"></div><div class="face"></div><i class="eye a"></i><i class="eye b"></i><div class="neck"></div><div class="arm l"></div><div class="arm r"></div><div class="body"></div><div class="skirt"></div><div class="leg l"></div><div class="leg r"></div></div></div>
+   <div class="controls"><label>الفستان</label><select data-target="doll1" data-type="look"><option value="pink">وردي</option><option value="blue">أزرق</option><option value="gold">ذهبي</option><option value="purple">موف</option><option value="red">أحمر</option></select><label>لون الشعر</label><select data-target="doll1" data-type="hair"><option value="brown">بني</option><option value="black">أسود</option><option value="blonde">أشقر</option></select></div>
+  </article>
+  <article class="dollcard"><h2>العروسة الثانية</h2><div class="doll" id="doll2" data-look="blue" data-hair="black"><div class="figure"><div class="hair"></div><div class="face"></div><i class="eye a"></i><i class="eye b"></i><div class="neck"></div><div class="arm l"></div><div class="arm r"></div><div class="body"></div><div class="skirt"></div><div class="leg l"></div><div class="leg r"></div></div></div>
+   <div class="controls"><label>الفستان</label><select data-target="doll2" data-type="look"><option value="blue">أزرق</option><option value="pink">وردي</option><option value="gold">ذهبي</option><option value="purple">موف</option><option value="red">أحمر</option></select><label>لون الشعر</label><select data-target="doll2" data-type="hair"><option value="black">أسود</option><option value="brown">بني</option><option value="blonde">أشقر</option></select></div>
+  </article>
+ </div>
+ <div class="top" style="margin:15px 0 0"><button class="primary" id="judge">احسمي المنافسة</button><button id="reset">إعادة الاختيار</button></div>
+ <div class="score" id="score" aria-live="polite"></div>
+</section>
+</main>
+<footer>نسخة أولية قابلة للتجربة على الموبايل — Omnia Fashion</footer>
+<script>
+const themes=['سهرة ملكية 👑','حفلة على الشاطئ 🏖️','موعد في الربيع 🌷','حفل تخرّج 🎓','عرض أزياء 💎'];
+document.querySelectorAll('select').forEach(s=>s.addEventListener('change',()=>document.getElementById(s.dataset.target).dataset[s.dataset.type]=s.value));
+document.getElementById('newTheme').onclick=()=>document.getElementById('theme').textContent='موضوع التحدّي: '+themes[Math.floor(Math.random()*themes.length)];
+document.getElementById('judge').onclick=()=>{let a=document.getElementById('doll1').dataset.look,b=document.getElementById('doll2').dataset.look;let winner=a===b?'تعادل! ذوق العروستين متقارب 💖':(Math.random()>.5?'العروسة الأولى':'العروسة الثانية');let score=document.getElementById('score');score.style.display='block';score.innerHTML='<strong>نتيجة التحدّي</strong><br>'+winner+'<br><small>دي جولة تجريبية، اختاروا الفستان حسب موضوع التحدّي!</small>'};
+document.getElementById('reset').onclick=()=>{document.getElementById('doll1').dataset.look='pink';document.getElementById('doll1').dataset.hair='brown';document.getElementById('doll2').dataset.look='blue';document.getElementById('doll2').dataset.hair='black';document.querySelectorAll('select').forEach(s=>s.selectedIndex=0);document.getElementById('score').style.display='none'};
+</script>
+</body></html>
